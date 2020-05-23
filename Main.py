@@ -40,21 +40,19 @@ def switch():
             for rec in detected:
                 img_desc.add_patch(
                     Rectangle(
-                        (rec['c'], rec['r'])
-                        rec['width'], rec['height'], fill = False, color = 'g', line_width = 3
+                        (rec['c'], rec['r']),
+                        rec['width'],
+                         rec['height'], 
+                         fill = False,
+                          color = 'g', line_width = 3
                     )
                 )
             plt.show()
 
         show_detected_face(img,detected)
 
-     dict = {
-        1 : Sar,
-        2 : Lar,
-        3 : fd,
-
-    }
-    dict.get(option,default)()
-
-
-
+    def hist():
+        grayscale = color.rgb2gray(img)
+        plt.hist(grayscale.ravel(), bins = 256)
+        plt.title('Light Intensity Histogram')
+        plt.show
